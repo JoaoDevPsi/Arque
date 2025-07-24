@@ -1,0 +1,443 @@
+/* Estilos Gerais */
+body {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Barra de navegação */
+.navbar {
+    background-color: #0c4c7d;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin: 5px 0;
+}
+
+.navbar ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar ul li a:hover {
+    background-color: #1a6da8;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.navbar ul li a.active {
+    background-color: #1a6da8;
+    font-weight: 600;
+}
+
+/* Botão do WhatsApp */
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white !important;
+    border-radius: 50px;
+    padding: 10px 20px !important;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar-nav .whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.navbar-nav .whatsapp-btn i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+/* Galeria */
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo base para TODOS os itens */
+.instagram-single,
+.instagram-carousel {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    aspect-ratio: 3/4;
+    position: relative;
+    background: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.instagram-single:hover,
+.instagram-carousel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Imagens dentro dos itens */
+.instagram-single img,
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Carrossel */
+.instagram-carousel {
+    position: relative;
+    grid-column: 1 / -1; /* Ocupa toda a largura */
+    max-width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Controles do carrossel */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 15px;
+}
+
+.carousel-next {
+    right: 15px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Indicadores */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Botão Admin */
+.admin-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0075a3;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    z-index: 1000;
+    transition: all 0.3s;
+}
+
+.admin-btn:hover {
+    background: #005f8a;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .instagram-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .carousel-prev,
+    .carousel-next {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    
+    .carousel-indicators {
+        bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .instagram-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .carousel-prev,
+    .carousel-next {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    
+    .carousel-indicators {
+        bottom: 10px;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .navbar ul li {
+        width: 100%;
+    }
+    
+    .navbar ul li a {
+        padding: 10px;
+    }
+}
+
+.gallery-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 40px auto; /* Adiciona espaçamento entre as seções */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-section h2 {
+    text-align: center;
+    color: #0c4c7d;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 700;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/* Estilos para a seção de Fotos da Clínica */
+.clinic-photos-section h3 {
+    color: #1a6da8;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    font-weight: 600;
+    border-bottom: 1px dashed #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.clinic-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espaço entre as categorias (Recepção, Corredor, etc.) */
+}
+
+.photos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.photos-container img {
+    width: 100%;
+    /* Removido height fixo e alterado object-fit para 'contain' ou 'scale-down' */
+    /* Para não cortar a imagem, use 'contain' */
+    object-fit: contain; /* Garante que a imagem seja totalmente visível dentro do contêiner */
+    height: 200px; /* Mantemos a altura para manter o grid uniforme, mas a imagem não será cortada */
+    background-color: #eee; /* Cor de fundo para as áreas vazias se object-fit: contain */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indica que a imagem é clicável */
+}
+
+.photos-container img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade para as fotos da clínica */
+@media (max-width: 768px) {
+    .photos-container {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .photos-container {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+    .gallery-section {
+        padding: 20px 15px;
+        margin: 20px auto;
+    }
+    .gallery-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .clinic-photos-section h3 {
+        font-size: 1.4em;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    .photos-container img {
+        height: 180px;
+    }
+}
+
+/* --- Estilos do Lightbox (NOVO) --- */
+.lightbox {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 2000; /* Acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro semi-transparente */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(5px); /* Compatibilidade Safari */
+}
+
+.lightbox.active {
+    display: flex; /* Mostra o lightbox quando ativo */
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+    animation: zoomIn 0.3s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 2001; /* Garante que o botão esteja acima da imagem */
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    z-index: 2001;
+}
+
+.lightbox-nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}

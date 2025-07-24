@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Clínica Arquê</title>
+        <link rel="stylesheet" href="endereco.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="site_arque.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quem_somos.html" class="nav-link">Quem somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="endereco.html" class="nav-link">Endereço</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="galeria.html" class="nav-link">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="plano.html" class="nav-link">Plano de saúde</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="artigos.html" class="nav-link">Artigos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="atenda.html" class="nav-link">Atenda conosco</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://wa.me/5571992394554" target="_blank" class="nav-link whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Contato
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="img/Tk_frente.jpg" alt="Frente do prédio" class="gallery-img lightbox-trigger">
+                    <div class="image-caption">frente do predio</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/tk_lateral.jpg" alt="lateral do predio" class="gallery-img lightbox-trigger">
+                    <div class="image-caption">Lateral do predio</div>
+                </div>
+            </div>
+            <div class="lightbox" id="lightbox">
+                <span class="close-btn">&times;</span>
+                <span class="nav-btn prev-btn">&#10094;</span>
+                <img class="lightbox-content" id="lightbox-img">
+                <span class="nav-btn next-btn">&#10095;</span>
+                <div class="caption-text" id="caption"></div>
+            </div>
+            </div>
+
+        <section class="mapa">
+            <h3 class="titulo-principal">Nossa Clinica: </h3>
+            <p class="mapa-texto"><em><strong>Estamos localizados na sala 1303.<br/>13° Andar, virando a direita saindo dos elavadores</strong></em></p>
+            <div class="mapa-conteudo">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.800158491466!2d-38.454087925158376!3d-12.98463008733183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161b0f9708c85d%3A0xc67d7a2152483246!2sAv.%20Prof.%20Magalh%C3%A3es%20Neto%2C%201856%20-%20Pituba%2C%20Salvador%20-%20BA%2C%2041810-011!5e0!3m2!1spt-BR!2sbr!4v1712935438694!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="copyright">&copy; Clínica Arquê Espaço de Psicologia <span id="current-year"></span></p>
+    </footer>
+
+    <script src="endereco.js"></script>
+</body>
+</html>
