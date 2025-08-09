@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Arquê - Galeria</title>
     <link rel="stylesheet" href="galeria.css">
+    <script src="auth_service.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a class="nav-link active" href="site_arque.html">Início</a>
+                    <a class="nav-link" href="site_arque.html">Início</a>
                 </li>
                 <li class="nav-item">
                     <a href="quem_somos.html" class="nav-link">Quem somos</a>
                 </li>
                 <li class="nav-item">
+                    <a href="nosso_time.html" class="nav-link">Nosso time</a>
+                </li>
+                <li class="nav-item">
                     <a href="endereco.html" class="nav-link">Endereço</a>
                 </li>
                 <li class="nav-item">
-                    <a href="galeria.html" class="nav-link">Galeria</a>
+                    <a href="galeria.html" class="nav-link active">Galeria</a>
                 </li>
                 <li class="nav-item">
                     <a href="plano.html" class="nav-link">Plano de saúde</a>
@@ -39,12 +43,14 @@
             </ul>
         </div>
     </nav>
-
+    <div class="title">
+        <h1>Clínica Arquê de Psicologia</h1>
+    </div>
     <main>
         <section class="gallery-section instagram-section">
             <h2>Posts do Instagram</h2>
             <div class="instagram-grid" id="galleryContainer">
-                </div>
+            </div>
         </section>
 
         <section class="gallery-section clinic-photos-section">
@@ -57,7 +63,7 @@
                         <img src="img/entrada2.jpg" alt="Foto da Recepção 2">
                         <img src="img/recepcao1.jpg" alt="recepção 1">
                         <img src="img/recepcao2.jpg" alt="recepção 2">
-                        </div>
+                    </div>
                 </div>
 
                 <div class="clinic-category">
@@ -65,7 +71,7 @@
                     <div class="photos-container">
                         <img src="img/corredor.jpg" alt="Foto do Corredor 1">
                         <img src="img/banheiro.jpg" alt="banheiro">
-                        </div>
+                    </div>
                 </div>
 
                 <div class="clinic-category">
@@ -77,7 +83,7 @@
                         <img src="img/atendimentosala1.jpg" alt="atendimentosala1">
                         <img src="img/psisala1.jpg" alt="psisala1">
                         <img src="img/pacisala2.jpg" alt="pacisala2">
-                        </div>
+                    </div>
                 </div>
 
                 <div class="clinic-category">
@@ -88,7 +94,7 @@
                         <img src="img/atendimento2.jpg" alt="atendimento2">
                         <img src="img/psi2.jpg" alt="psi2">
                         <img src="img/paciente2.jpg" alt="paciente2">
-                        </div>
+                    </div>
                 </div>
 
                 <div class="clinic-category">
@@ -98,11 +104,67 @@
                         <img src="img/estante3.jpg" alt="estante3">
                         <img src="img/psi3.jpg" alt="psi3">
                         <img src="img/atendimento3.jpg" alt="atendimento3">
-                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section events-photos-section">
+            <h2>Eventos da Arquê</h2>
+            <div class="photos-container">
+                <div>
+                    <img src="img/AQsetembroamarelo1.jpg" alt="Palestra Setembro Amarelo">
+                    <p class="photo-caption">Palestra Setembro Amarelo</p>
+                </div>
+                <div>
+                    <img src="img/aqsetembroamarelo2.jpg" alt="Palestra Setembro Amarelo">
+                    <p class="photo-caption">Palestra Setembro Amarelo</p>
+                </div>
+                <div>
+                    <img src="img/aquninassau1.jpg" alt="Aula Uninassau">
+                    <p class="photo-caption">Aula Uninassau</p>
+                </div>
+                <div>
+                    <img src="img/aqanaclara1.jpg" alt="Palestra Arque Puer">
+                    <p class="photo-caption">Palestra Arque Puer</p>
                 </div>
             </div>
         </section>
     </main>
+    <footer class="bg-gray-800 text-gray-300 py-8 px-4 sm:px-6 lg:px-8 rounded-t-lg shadow-lg">
+        <div class="div max-w-7xl mx-auto">
+            <div>
+                <img src="img/logo.jpg" alt="Logo da Clínica Arquê" class="h-12 mb-4 rounded-md">
+                <p class="text-sm">&copy; <span id="current-year"></span> Clínica Arquê de Psicologia. Todos os direitos reservados.</p>
+                <p class="text-xs mt-1">Sua saúde mental, nossa prioridade.</p>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-3">Contato</h3>
+                <p class="text-sm">Email: <a href="mailto:clinicaarque.psi@gmail.com" class="hover:text-white transition-colors duration-200">clinicaarque.psi@gmail.com</a></p>
+                <p class="text-sm">Telefone: <a href="https://wa.me/5571992394554" target="_blank" class="hover:text-white transition-colors duration-200">+55 (71) 99239-4554</a></p>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-3">Links Úteis</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="site_arque.html" class="hover:text-white transition-colors duration-200">Início</a></li>
+                    <li><a href="quem_somos.html" class="hover:text-white transition-colors duration-200">Quem somos</a></li>
+                    <li><a href="artigos.html" class="hover:text-white transition-colors duration-200">Artigos</a></li>
+                    <li><a href="plano.html" class="hover:text-white transition-colors duration-200">Plano de Saúde</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-3">Desenvolvido por</h3>
+                <a href="https://github.com/JoaoDevPsi" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors duration-200 text-sm">João Pedro Carvalho Araújo / github.com/JoaoDevPsi</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 
     <a href="login.html" class="admin-btn">Admin</a>
 

@@ -1,96 +1,129 @@
-/* Estilos Gerais */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 body {
     margin: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
     color: #333;
 }
 
-/* Barra de navegação */
 .navbar {
     background-color: #0c4c7d;
     padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.navbar ul {
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-list {
     list-style-type: none;
     margin: 0;
-    padding: 0 20px;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
-.navbar ul li {
-    margin: 5px 0;
+.nav-item {
+    margin: 0;
 }
 
-.navbar ul li a {
+.nav-link {
     display: block;
     color: white;
     text-align: center;
-    padding: 10px 20px;
+    padding: 10px 18px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
-    border-radius: 4px;
-    font-family: 'Poppins', sans-serif;
+    border-radius: 6px;
+    font-size: 0.95rem;
 }
 
-.navbar ul li a:hover {
+.nav-link:hover {
     background-color: #1a6da8;
-    color: white;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.navbar ul li a.active {
+.nav-link.active {
     background-color: #1a6da8;
     font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Botão do WhatsApp */
 .whatsapp-btn {
     background-color: #25D366;
     color: white !important;
     border-radius: 50px;
-    padding: 10px 20px !important;
-    font-weight: bold;
+    padding: 10px 22px !important;
+    font-weight: 600;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
 }
 
-.navbar-nav .whatsapp-btn:hover {
+.whatsapp-btn:hover {
     background-color: #128C7E;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.4);
 }
 
-.navbar-nav .whatsapp-btn i {
-    margin-right: 8px;
-    font-size: 1.1rem;
+.title {
+    text-align: center;
+    padding: 2rem 0;
 }
 
-/* Galeria */
+.title h1 {
+    color: #0c4c7d;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+main {
+    min-height: calc(100vh - 100px);
+}
+
+.gallery-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-section h2 {
+    text-align: center;
+    color: #0c4c7d;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 700;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
 .instagram-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
+    padding: 0px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
-/* Estilo base para TODOS os itens */
-.instagram-single,
-.instagram-carousel {
+.instagram-single {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -100,27 +133,48 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.instagram-single:hover,
-.instagram-carousel:hover {
+.instagram-single:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-/* Imagens dentro dos itens */
-.instagram-single img,
-.carousel-slide img {
+.instagram-single img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-/* Carrossel */
-.instagram-carousel {
+.instagram-carousel-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    aspect-ratio: 3/4;
     position: relative;
-    grid-column: 1 / -1; /* Ocupa toda a largura */
-    max-width: 100%;
-    aspect-ratio: 1/1;
+    background: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.instagram-carousel-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.instagram-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-content-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .carousel-slide {
@@ -129,6 +183,10 @@ body {
     height: 100%;
     opacity: 0;
     transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
 }
 
 .carousel-slide.active {
@@ -136,7 +194,13 @@ body {
     z-index: 1;
 }
 
-/* Controles do carrossel */
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 .carousel-prev,
 .carousel-next {
     position: absolute;
@@ -171,7 +235,6 @@ body {
     transform: translateY(-50%) scale(1.1);
 }
 
-/* Indicadores */
 .carousel-indicators {
     position: absolute;
     bottom: 20px;
@@ -197,94 +260,27 @@ body {
     transform: scale(1.2);
 }
 
-/* Botão Admin */
 .admin-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #0075a3;
+    background-color: #0c4c7d;
     color: white;
-    padding: 10px 15px;
+    padding: 12px 20px;
     border-radius: 5px;
     text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
     z-index: 1000;
-    transition: all 0.3s;
 }
 
 .admin-btn:hover {
-    background: #005f8a;
+    background-color: #1a6da8;
     transform: translateY(-2px);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .instagram-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-    
-    .carousel-prev,
-    .carousel-next {
-        width: 32px;
-        height: 32px;
-        font-size: 16px;
-    }
-    
-    .carousel-indicators {
-        bottom: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .instagram-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .carousel-prev,
-    .carousel-next {
-        width: 28px;
-        height: 28px;
-        font-size: 14px;
-    }
-    
-    .carousel-indicators {
-        bottom: 10px;
-    }
-    
-    .navbar ul {
-        flex-direction: column;
-        padding: 10px;
-    }
-    
-    .navbar ul li {
-        width: 100%;
-    }
-    
-    .navbar ul li a {
-        padding: 10px;
-    }
-}
-
-.gallery-section {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 40px auto; /* Adiciona espaçamento entre as seções */
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.gallery-section h2 {
-    text-align: center;
-    color: #0c4c7d;
-    margin-bottom: 30px;
-    font-size: 2.2em;
-    font-weight: 700;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 15px;
-}
-
-/* Estilos para a seção de Fotos da Clínica */
 .clinic-photos-section h3 {
     color: #1a6da8;
     margin-top: 30px;
@@ -298,7 +294,7 @@ body {
 .clinic-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Espaço entre as categorias (Recepção, Corredor, etc.) */
+    gap: 40px;
 }
 
 .photos-container {
@@ -309,15 +305,13 @@ body {
 
 .photos-container img {
     width: 100%;
-    /* Removido height fixo e alterado object-fit para 'contain' ou 'scale-down' */
-    /* Para não cortar a imagem, use 'contain' */
-    object-fit: contain; /* Garante que a imagem seja totalmente visível dentro do contêiner */
-    height: 200px; /* Mantemos a altura para manter o grid uniforme, mas a imagem não será cortada */
-    background-color: #eee; /* Cor de fundo para as áreas vazias se object-fit: contain */
+    object-fit: contain;
+    height: 200px;
+    background-color: #eee;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer; /* Indica que a imagem é clicável */
+    cursor: pointer;
 }
 
 .photos-container img:hover {
@@ -325,64 +319,76 @@ body {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsividade para as fotos da clínica */
-@media (max-width: 768px) {
-    .photos-container {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    }
+.events-photos-section .photos-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
 }
 
-@media (max-width: 480px) {
-    .photos-container {
-        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
-    }
-    .gallery-section {
-        padding: 20px 15px;
-        margin: 20px auto;
-    }
-    .gallery-section h2 {
-        font-size: 1.8em;
-        margin-bottom: 20px;
-    }
-    .clinic-photos-section h3 {
-        font-size: 1.4em;
-        margin-top: 20px;
-        margin-bottom: 15px;
-    }
-    .photos-container img {
-        height: 180px;
-    }
+.events-photos-section .photos-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* --- Estilos do Lightbox (NOVO) --- */
+.photo-caption {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 5px;
+    line-height: 1.2;
+}
+
 .lightbox {
-    display: none; /* Escondido por padrão */
+    display: none;
     position: fixed;
-    z-index: 2000; /* Acima de tudo */
+    z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro semi-transparente */
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(5px); /* Efeito de desfoque */
-    -webkit-backdrop-filter: blur(5px); /* Compatibilidade Safari */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .lightbox.active {
-    display: flex; /* Mostra o lightbox quando ativo */
+    display: flex;
 }
 
-.lightbox-content {
+.lightbox-content-wrapper {
     position: relative;
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
     margin: auto;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     animation: zoomIn 0.3s ease-out;
+}
+
+.lightbox-content-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.lightbox-content {
+    display: block;
+}
+
+.lightbox-caption {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    font-weight: 500;
+    border-radius: 0 0 8px 8px;
 }
 
 @keyframes zoomIn {
@@ -405,7 +411,7 @@ body {
     font-weight: bold;
     transition: 0.3s;
     cursor: pointer;
-    z-index: 2001; /* Garante que o botão esteja acima da imagem */
+    z-index: 2001;
 }
 
 .lightbox-close:hover,
@@ -440,4 +446,164 @@ body {
 
 .lightbox-next {
     right: 20px;
+}
+
+footer {
+    background-color: #0c4c7d;
+    color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+}
+
+footer > div.max-w-7xl {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1280px;
+    gap: 2rem;
+}
+
+footer > div.max-w-7xl > div {
+    flex: 1 1 auto;
+    min-width: 200px;
+    text-align: center;
+}
+
+footer > div.max-w-7xl > div:first-child {
+    text-align: left;
+}
+
+footer > div.max-w-7xl > div:first-child img {
+    height: 3rem;
+    width: auto;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    footer > div.max.w-7xl > div {
+        text-align: left;
+    }
+    footer > div.max-w-7xl > div:first-child {
+        flex-basis: 25%;
+    }
+    footer > div.max-w-7xl > div:nth-child(2),
+    footer > div.max-w-7xl > div:nth-child(3),
+    footer > div.max-w-7xl > div:nth-child(4) {
+        flex-basis: calc(75% / 3);
+    }
+}
+
+@media (min-width: 1024px) {
+    footer > div.max-w-7xl > div {
+        flex-basis: 25%;
+    }
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #a0aec0;
+}
+
+footer img {
+    border-radius: 0.375rem;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .nav-link {
+        padding: 10px 20px;
+        font-size: 1rem;
+        width: calc(100% - 40px);
+    }
+    .whatsapp-btn {
+        padding: 10px 20px !important;
+        font-size: 1rem;
+        width: auto;
+    }
+    .instagram-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    .instagram-carousel-wrapper {
+        aspect-ratio: 3/4;
+    }
+    .carousel-prev,
+    .carousel-next {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    .carousel-indicators {
+        bottom: 15px;
+    }
+    .photos-container {
+        grid-template-columns: repeat(auto-fill, minmax(220px, auto));
+    }
+    .photos-container img {
+        height: 180px;
+    }
+    .gallery-section {
+        padding: 20px 15px;
+        margin: 20px auto;
+    }
+    .gallery-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .clinic-photos-section h3 {
+        font-size: 1.4em;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    .photos-container img {
+        height: 180px;
+    }
+    .events-photos-section .photos-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, auto));
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-list {
+        gap: 5px;
+    }
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+    .whatsapp-btn {
+        padding: 8px 15px !important;
+        font-size: 0.9rem;
+    }
+    .instagram-grid {
+        grid-template-columns: 1fr;
+    }
+    .instagram-carousel-wrapper {
+        aspect-ratio: 3/4;
+    }
+    .carousel-prev,
+    .carousel-next {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    .carousel-indicators {
+        bottom: 10px;
+    }
+    .photos-container {
+        grid-template-columns: 1fr;
+    }
+    .photos-container img {
+        height: 180px;
+    }
+    .events-photos-section .photos-container {
+        grid-template-columns: 1fr;
+    }
 }

@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Atualiza o ano no footer
+   
     document.getElementById('current-year').textContent = new Date().getFullYear();
     
-    // Função de alerta para links externos
+    
     function alertar() {
         return confirm('Você será redirecionado para um site externo. Deseja continuar?');
     }
 
-    // Carrossel Avançado
+    
     class Carousel {
         constructor(container) {
             this.container = container;
@@ -16,17 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
             this.nextBtn = container.querySelector('.carousel-control.next');
             this.currentIndex = 0;
             this.interval = null;
-            this.autoPlayDelay = 5000; // 5 segundos
+            this.autoPlayDelay = 5000; 
             this.isPaused = false;
 
             this.init();
         }
 
         init() {
-            // Mostra o primeiro item
+            
             this.showItem(this.currentIndex);
             
-            // Event listeners
+            
             this.prevBtn.addEventListener('click', () => {
                 this.prev();
                 this.resetAutoPlay();
@@ -37,22 +37,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.resetAutoPlay();
             });
 
-            // Pausa ao interagir
+            
             this.container.addEventListener('mouseenter', () => this.pause());
             this.container.addEventListener('mouseleave', () => this.play());
 
-            // Inicia o autoplay
+            
             this.startAutoPlay();
         }
 
         showItem(index) {
-            // Atualiza índice atual
+            
             this.currentIndex = index;
             
-            // Esconde todos os itens
+            
             this.items.forEach(item => item.classList.remove('active'));
             
-            // Mostra o item atual
+            
             this.items[this.currentIndex].classList.add('active');
         }
 
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Inicializa o carrossel se existir na página
+    
     const carouselElement = document.querySelector('.carousel');
     if (carouselElement) {
         new Carousel(carouselElement);
