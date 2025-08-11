@@ -1,4 +1,4 @@
-window.API_BASE_URL = 'https://joaodevpsi.pythonanywhere.com/';
+window.API_BASE_URL = 'https://joaodevpsi.pythonanywhere.com/api/';
 window.TOKEN_KEY = 'accessToken';
 window.REFRESH_TOKEN_KEY = 'refreshToken';
 window.AUTH_STORAGE_TYPE_KEY = 'authStorageType';
